@@ -1,3 +1,4 @@
+import { BrowserRouter, Routes, Route} from "react-router-dom";
 import { useState } from "react";
 import"../src/styles/App.css"
 import CrewPage from "./components/CrewPage";
@@ -8,12 +9,14 @@ import Home from './components/Home';
 function App() {
   const [crewList, setCrewList] = useState()
   return (
-  <>
 
-    {/* <Home/> */}
-    <CrewPage crewList={crewList} setCrewList={setCrewList}/>
+  <BrowserRouter>
+    <Routes>
+       <Route index element = {<Home/>} />
+      <Route path="theCrew" element = {<CrewPage crewList={crewList} setCrewList={setCrewList}/>} />
+    </Routes>
     <div className="footer"><Footer/></div>
-  </>
+  </BrowserRouter>
   
   );
 }
