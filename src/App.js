@@ -1,25 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import"../src/styles/App.css"
+import CrewPage from "./components/CrewPage";
+import Footer from "./components/Footer";
+import Home from './components/Home';
+
 
 function App() {
+  const [crewList, setCrewList] = useState()
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+  <>
+
+    {/* <Home/> */}
+    <CrewPage crewList={crewList} setCrewList={setCrewList}/>
+    <div className="footer"><Footer/></div>
+  </>
+  
   );
 }
 
 export default App;
+

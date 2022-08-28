@@ -1,0 +1,18 @@
+
+
+.nav-item{
+ background-color: black;
+ color: white;
+ display: flex;
+justify-content: flex-end;
+justify-content: space-around;
+}
+
+.home-body{
+    background-image: url('/public/rixen2.jpeg') ; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;;
+   
+}
