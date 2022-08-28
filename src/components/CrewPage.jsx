@@ -1,4 +1,4 @@
-import NavBar from "./NavBar.jsx"
+
 import { useEffect } from "react"
 
 export default function CrewPage({crewList, setCrewList}){
@@ -16,9 +16,7 @@ export default function CrewPage({crewList, setCrewList}){
       }
     return(
        <>
-       <header>
-        <NavBar/>
-       </header>
+       
       
         <ul>
             {crewList.map(crew => (

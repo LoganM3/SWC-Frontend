@@ -1,7 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Bubblegum+Sans&display=swap');
 
+
+
+.navbar{
+    background-color: black;
+}
+.navbar-brand{
+    color: white;
+    font-family: "Bubblegum+Sans&display=swap"; 
+}
 
 .nav-item{
- background-color: black;
+ background-color: #cccc;
  color: white;
  display: flex;
 justify-content: flex-end;

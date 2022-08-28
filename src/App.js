@@ -4,6 +4,8 @@ import"../src/styles/App.css"
 import CrewPage from "./components/CrewPage";
 import Footer from "./components/Footer";
 import Home from './components/Home';
+import NavBar from "./components/NavBar";
+import VideoPage from "./components/VideoPage";
 
 
 function App() {
@@ -11,9 +13,11 @@ function App() {
   return (
 
   <BrowserRouter>
+    <NavBar/>
     <Routes>
-       <Route index element = {<Home/>} />
+      <Route index element = {<Home/>} />
       <Route path="theCrew" element = {<CrewPage crewList={crewList} setCrewList={setCrewList}/>} />
+      <Route path="Videos" element = {<VideoPage />} />
     </Routes>
     <div className="footer"><Footer/></div>
   </BrowserRouter>
