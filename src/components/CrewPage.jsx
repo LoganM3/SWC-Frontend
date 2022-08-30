@@ -4,14 +4,14 @@ import { useEffect } from "react"
 
 
 export default function CrewPage({crewList, setCrewList}){
-    // call the api and use setTasklist to fill in state....
+    // call the api and use setTasklifirst to fill in state....
     useEffect(() => {
-        fetch('http://localhost:4000/crew')
+        fetch('https://swc-api-aa731.web.app/crew')
         .then(results => results.json())
         .then(crew => setCrewList(crew))
         .catch(err => console.error(err))
         
-    }, [setCrewList])
+    }, [])
 
     if(!crewList){
         return <h2>add crew members here</h2>
@@ -19,7 +19,7 @@ export default function CrewPage({crewList, setCrewList}){
 
       
     return(
-       <>
+       <div>
         <ul>
             {crewList.map(crew => (
                 <li key={crew.id}>{crew.name}</li>
@@ -28,7 +28,7 @@ export default function CrewPage({crewList, setCrewList}){
         {/* <Upload/> */}
       
       
-        </>
+        </div>
     )
 }
 

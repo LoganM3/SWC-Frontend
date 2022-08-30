@@ -28,7 +28,7 @@ function Upload() {
         });
       });
     });
-  }, [videoListRef]);
+  }, []);
 
   return (
     <div className="upload">
