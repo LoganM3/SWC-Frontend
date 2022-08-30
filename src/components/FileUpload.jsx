@@ -8,10 +8,12 @@ import { v4 } from "uuid";
 function Upload() {
   const [videoUpload, setVideoUpload] = useState(null);
   const [videoUrls, setVideoUrls] = useState([]);
+ 
 
   const videoListRef = ref(storage, "videos/");
   const uploadFile = () => {
     if (videoUpload == null) return;
+
     const videoRef = ref(storage, `videos/${videoUpload.name + v4()}`);
     uploadBytes(videoRef, videoUpload).then((snapshot) => {
       getDownloadURL(snapshot.ref).then((url) => {
@@ -32,16 +34,25 @@ function Upload() {
 
   return (
     <div className="upload">
+        <form>
       <input
         type="file"
         onChange={(e) => {
+            console.log('hello')
           setVideoUpload(e.target.files[0]);
         }}
       />
       <button onClick={uploadFile}> Upload Video</button>
+      </form>
       {videoUrls.map((url) => {
-        return <img src={url} />;
-      })}
+        return (
+            <>
+                 {/* <img src={url} />); */}
+                 <video controls >
+              <source src={url} />
+            </video>
+            </>
+      )})}
     </div>
   );
 }

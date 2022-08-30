@@ -11,7 +11,7 @@ export default function CrewPage({crewList, setCrewList}){
         .then(crew => setCrewList(crew))
         .catch(err => console.error(err))
         
-    }, [])
+    }, [setCrewList])
 
     if(!crewList){
         return <h2>add crew members here</h2>
