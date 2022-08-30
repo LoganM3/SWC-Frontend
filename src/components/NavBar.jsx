@@ -8,9 +8,9 @@ import { Link } from "react-router-dom"
 function NavBar(){
 
     return(
-         <nav class="navbar">
-           <a class="navbar-brand" href="#">
-            <img src="/docs/4.6/assets/brand/bootstrap-solid.svg" width="30" height="30" class="d-inline-block align-top" alt="" />
+         <nav className="navbar">
+           <a className="navbar-brand" href="#">
+            <img src="wave.jpeg" width="30" height="30" className="d-inline-block align-top" alt="page title" />
                 Sunday Wake Crew
           </a>
           <Nav activeKey="/home">
@@ -20,7 +20,7 @@ function NavBar(){
         </Nav.Link>
       </Nav.Item>
       <Nav.Item>
-       <Nav.Link as={Link} to='/theCrew'>
+       <Nav.Link as={Link} to='/crew'>
         The Crew
         </Nav.Link>
       </Nav.Item>
@@ -34,30 +34,10 @@ function NavBar(){
       
     </Nav>
 
-        </nav>
+      </nav>
 )
 }
          
-         
-         
-         
-         
-         
-         
-         
-         {/* <ul className='nav-item'>
-                <li class="nav-home">
-                     <a class="nav-link active" href="#">Home</a>
-                </li>
-                <li class="nav-crew">
-                     <a class="nav-link active" href="#">The Crew</a>
-                </li>
-                <li class="nav-videoss">
-                     <a class="nav-link active" href="#">Videos</a>
-                </li>
-        </ul> */}
-        {/* </>
-    )
-} */}
+
 
 export default NavBar

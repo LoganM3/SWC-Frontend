@@ -10,13 +10,15 @@ import VideoPage from "./components/VideoPage";
 
 function App() {
   const [crewList, setCrewList] = useState()
+  
+
   return (
 
   <BrowserRouter>
     <NavBar/>
     <Routes>
       <Route index element = {<Home/>} />
-      <Route path="theCrew" element = {<CrewPage crewList={crewList} setCrewList={setCrewList}/>} />
+      <Route path="crew" element = {<CrewPage crewList={crewList} setCrewList={setCrewList}/>} />
       <Route path="Videos" element = {<VideoPage />} />
     </Routes>
     <div className="footer"><Footer/></div>
@@ -26,4 +28,6 @@ function App() {
 }
 
 export default App;
+
+
 
