@@ -1,10 +1,12 @@
-import { useEffect } from "react"
+import { useEffect ,} from "react"
+import { AddFrom } from "./AddForm"
 import { ImageUpload } from "./FileUpload"
 
 
 
 
 export default function CrewPage({crewList, setCrewList}){
+    
     // call the api and use setTasklifirst to fill in state....
     useEffect(() => {
         fetch('https://swc-api-aa731.web.app/crew')
@@ -23,10 +25,13 @@ export default function CrewPage({crewList, setCrewList}){
        <div>
         <ul>
             {crewList.map(crew => (
-                <li key={crew.id}>{crew.name}</li>
+                <li key={crew.id}>{crew.name}
+                 {crew.profilePic && <img src={crew.profilePic} width={300} />}
+                </li>
             ))}
         </ul>
-        <ImageUpload/>
+        {/* <ImageUpload/> */}
+        <AddFrom/>
       
       
         </div>

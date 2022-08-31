@@ -97,11 +97,11 @@ export function ImageUpload() {
           <hr />
           { filebase64 &&
             <>
-            <p>
+            {/* <p>
               It's ready to be submitted!<br />
               Simply include the 'filebase64' variable<br /> 
               as one of the things you submit</p>
-            
+             */}
             {/* if its an image */}
             {(filebase64.indexOf("image/") > -1) && 
             <img src={filebase64} width={300} />
@@ -118,7 +118,7 @@ export function ImageUpload() {
  
                            
             <hr />
-            <button> Submit and check the console</button>
+            {/* <button> Submit and check the console</button> */}
             
             </>
           }
