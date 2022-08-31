@@ -10,7 +10,7 @@ function NavBar(){
     return(
          <nav className="navbar">
            <a className="navbar-brand" href="#">
-            <img src="wave.jpeg" width="30" height="30" className="d-inline-block align-top" alt="page title" />
+            <img src="Logo1.png" width="30" height="30" className="d-inline-block align-top" alt="page title" />
                 Sunday Wake Crew
           </a>
           <Nav activeKey="/home">

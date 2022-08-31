@@ -12,21 +12,21 @@ return (
       <Carousel.Item>
         <img
         className="img"
-        src= 'boys.jpg'
+        src= 'Logo1.png'
         alt="the boys"
         />
       </Carousel.Item>
       <Carousel.Item interval={1200}>
           <img
             className="img"
-            src="van.jpeg"
+            src="connor pics_front board (6 of 9).jpg"
             alt="van"
           />
         </Carousel.Item>
         <Carousel.Item interval={1200}>
           <img
             className="img"
-            src="wave.jpeg"
+            src="Tom_vibing (4 of 4).jpg"
             alt=""
           />
         </Carousel.Item>

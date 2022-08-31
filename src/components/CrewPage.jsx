@@ -1,5 +1,6 @@
 import { useEffect } from "react"
-// import Upload from "./FileUpload"
+import { ImageUpload } from "./FileUpload"
+
 
 
 
@@ -25,7 +26,7 @@ export default function CrewPage({crewList, setCrewList}){
                 <li key={crew.id}>{crew.name}</li>
             ))}
         </ul>
-        {/* <Upload/> */}
+        <ImageUpload/>
       
       
         </div>

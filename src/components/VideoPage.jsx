@@ -1,4 +1,4 @@
-import Upload from "./FileUpload";
+import {Upload} from "./FileUpload";
 import "../styles/Videos.css"
 
 export default function VideoPage(){
