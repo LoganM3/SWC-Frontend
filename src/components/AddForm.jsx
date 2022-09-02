@@ -71,6 +71,16 @@ export function AddForm({setCrewList}) {
                 onChange={updateForm}
               />
             </Form.Group>
+         
+            {/* <Form.Group className="mb-3" controlId="">
+              <Form.Label>Instagram</Form.Label>
+              <Form.Control
+                type="link"
+                name="Instagram"
+                placeholder="Instagram link"
+                onChange={updateForm}
+              />
+            </Form.Group> */}
 
             <Form.Group className="mb-3" controlId="formBasicPassword">
               <Form.Label>Description</Form.Label>

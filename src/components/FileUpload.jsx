@@ -48,12 +48,12 @@ export function Upload() {
       <button onClick={uploadFile}> Upload Video</button>
       </form>
       
-      {videoUrls.map((url) => {
+      {videoUrls.map((url, index) => {
         return (
                  <>
                  
                   {/* <img src={url} /> */}
-                 <video className="videos" key={url}  controls >
+                 <video className="videos" key={url.index}  controls >
               <source src={url}/>
             </video>
              </>
