@@ -5,7 +5,7 @@ export default function VideoPage(){
 
 
     return(
-        <div className="Videos">
+        <div >
         <Upload/>
         </div>
     )

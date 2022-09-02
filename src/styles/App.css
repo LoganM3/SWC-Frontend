@@ -5,3 +5,15 @@
       width: 100%; /* The width is 100%, when the viewport is 800px or smaller */
     }
   }
+
+  .body{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vw;
+  }
+
+  .footer{
+    margin-top: auto;
+  }
+
+  

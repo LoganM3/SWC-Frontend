@@ -1,7 +1,7 @@
-import { useEffect ,} from "react"
-import { AddFrom } from "./AddForm"
+import { useEffect,useState} from "react"
+import { AddForm } from "./AddForm"
 import { ImageUpload } from "./FileUpload"
-
+import "../styles/CrewPage.css"
 
 
 
@@ -22,16 +22,20 @@ export default function CrewPage({crewList, setCrewList}){
 
       
     return(
-       <div>
-        <ul>
+       <div >
+        <ul className="crewContainer">
             {crewList.map(crew => (
-                <li key={crew.id}>{crew.name}
-                 {crew.profilePic && <img src={crew.profilePic} width={300} />}
-                </li>
+                <div key={crew.id} className="crewCards">
+                         {crew.profilePic && <img className="profilePic" src={crew.profilePic} width={300} />}
+                         <br/>
+                         {crew.name}
+                         <br/>
+                         {crew.description}
+                </div>
             ))}
         </ul>
-        {/* <ImageUpload/> */}
-        <AddFrom/>
+       
+        <AddForm setCrewList={setCrewList}/>
       
       
         </div>

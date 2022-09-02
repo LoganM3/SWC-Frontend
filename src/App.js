@@ -9,12 +9,12 @@ import VideoPage from "./components/VideoPage";
 
 
 function App() {
-   const [crewList, setCrewList] = useState()
+    const [crewList, setCrewList] = useState()
   
 
   return (
 
-  <BrowserRouter>
+  <BrowserRouter className="body">
     <NavBar/>
     <Routes>
       <Route index element = {<Home/>} />

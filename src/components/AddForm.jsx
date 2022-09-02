@@ -2,10 +2,11 @@ import React, { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import Form from "react-bootstrap/Form";
-import { ImageUpload } from "./FileUpload";
-import { async } from "@firebase/util";
+// import '../styles/CrewPage.css'
 
-export function AddFrom() {
+
+
+export function AddForm({setCrewList}) {
   const [show, setShow] = useState(false);
   const [form, setForm] = useState({});
   const [profilePic, setProfilePic] = useState();
@@ -16,11 +17,13 @@ export function AddFrom() {
   async function formSubmit(e) {
     e.preventDefault();
     form.profilePic=profilePic
-    const addCrew = await fetch("http://localhost:5050/crew", {
+    const addCrew = await fetch("https://swc-api-aa731.web.app/crew", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(form),
-    }).catch((err) => console.error(err));
+    })
+    .catch((err) => console.error(err))
+    setCrewList(await addCrew.json())  //fix this line******
     handleClose()
   }
 
@@ -56,7 +59,7 @@ export function AddFrom() {
           <Form onSubmit={formSubmit}>
             <input type="file" onChange={(e) => convertFile(e.target.files)} />
             <hr />
-            {profilePic && <img src={profilePic} width={300} />}
+            {profilePic && <img src={profilePic} width={300}/>}
 
             <Form.Group className="mb-3" controlId="">
               <Form.Label>Name</Form.Label>
@@ -71,7 +74,12 @@ export function AddFrom() {
 
             <Form.Group className="mb-3" controlId="formBasicPassword">
               <Form.Label>Description</Form.Label>
-              <Form.Control as="textarea" placeholder="add description" />
+              <Form.Control 
+              as="textarea" 
+              name="description"
+              placeholder="add description" 
+              onChange={updateForm}
+              />
             </Form.Group>
           </Form>
         </Modal.Body>

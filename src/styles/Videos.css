@@ -1,4 +1,6 @@
-.Videos{
-    height: 10%;
-    width: 10%;
+.videos{
+    display: flex;
+    
+    height: 400px;
+    width: 400px;
 }
