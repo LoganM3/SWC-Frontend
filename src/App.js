@@ -5,11 +5,13 @@ import CrewPage from "./components/CrewPage";
 import Footer from "./components/Footer";
 import Home from './components/Home';
 import NavBar from "./components/NavBar";
-import VideoPage from "./components/VideoPage";
+// import VideoPage from "./components/VideoPage";
+import VidPage from "./components/vidPage";
 
 
 function App() {
     const [crewList, setCrewList] = useState()
+    // const [videoList, setVideoList] = useState()
   
 
   return (
@@ -19,7 +21,8 @@ function App() {
     <Routes>
       <Route index element = {<Home/>} />
       <Route path="crew" element = {<CrewPage crewList={crewList} setCrewList={setCrewList}/>} />
-      <Route path="Videos" element = {<VideoPage />} />
+      <Route path="videos" element={<VidPage/>} />
+      {/* <Route path="Videos" element = {<VideoPage videoList={videoList} setVideoList={setVideoList}/>} /> */}
     </Routes>
     <div className="footer"><Footer/></div>
   </BrowserRouter>

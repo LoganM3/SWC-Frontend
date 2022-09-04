@@ -2,9 +2,9 @@
 .crewContainer{
  display: flex;
  flex-wrap: wrap;
- justify-content: space-around;
-  /* flex-direction: column;
-  align-items: center; */
+ justify-content: space-between;
+ font-size: large;
+
 
   
 /* 
@@ -17,17 +17,18 @@
 .profilePic{
     width:250px;
     height: 250px;
-  
-   
-
-    
+    border: 1px solid black;
     
 }
 
 .crewCards{
     height: fit-content;
     border: 2px solid black;
-    
-   
   
+}
+
+
+.groupImg{
+  width: 100vw;
+  height: 250px;
 }

@@ -1,6 +1,5 @@
 import { useEffect,useState} from "react"
 import { AddForm } from "./AddForm"
-import { ImageUpload } from "./FileUpload"
 import "../styles/CrewPage.css"
 
 
@@ -23,10 +22,12 @@ export default function CrewPage({crewList, setCrewList}){
       
     return(
        <div >
+        <div><img className="groupImg" src="group.png" /></div> 
+        <h2></h2>
         <ul className="crewContainer">
             {crewList.map(crew => (
                 <div key={crew.id} className="crewCards">
-                         {crew.profilePic && <img className="profilePic" src={crew.profilePic} width={300} />}
+                         {crew.profilePic && <img className="profilePic"  src={crew.profilePic} width={300} />}
                          <br/>
                          {crew.name}
                          <br/>

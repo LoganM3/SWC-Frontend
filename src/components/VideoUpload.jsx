@@ -1,4 +1,4 @@
-import React, { useState,useEffect} from "react";
+import React, { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import Form from "react-bootstrap/Form";
@@ -6,26 +6,24 @@ import Form from "react-bootstrap/Form";
 
 
 
-export function AddForm({setCrewList}) {
+export function AddVideo({setVideoList}) {
   const [show, setShow] = useState(false);
   const [form, setForm] = useState({});
-  const [profilePic, setProfilePic] = useState();
-  const [loading, setLoading] = useState()
+  const [url, setUrl] = useState();
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
   async function formSubmit(e) {
     e.preventDefault();
-    form.profilePic=profilePic
-    const addCrew = await fetch("https://swc-api-aa731.web.app/crew", {
+    form.url=url
+    const addVideo = await fetch("https://swc-api-aa731.web.app/videos", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(form),
     })
     .catch((err) => console.error(err))
-    setCrewList(await addCrew.json())  
-    // setLoading(false)  **** ask about loading and where to put it
+    setVideoList(await addVideo.json())  //fix this line******
     handleClose()
   }
 
@@ -42,7 +40,7 @@ export function AddForm({setCrewList}) {
       reader.readAsBinaryString(fileRef);
       reader.onload = (ev) => {
         // convert it to base64
-        setProfilePic(`data:${fileType};base64,${btoa(ev.target.result)}`);
+        setUrl(`data:${fileType};base64,${btoa(ev.target.result)}`);
       };
     }
   }
@@ -50,20 +48,22 @@ export function AddForm({setCrewList}) {
   return (
     <>
       <Button variant="primary" onClick={handleShow}>
-        Add Member
+        Add Video
       </Button>
 
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title>Add Member</Modal.Title>
+          <Modal.Title>Add Video</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <Form onSubmit={formSubmit}>
-            <input type="file" onChange={(e) => convertFile(e.target.files)} />
+            <input type="video" placeholder="import youtube url" onChange={(e) => convertFile(e.target.files)} />
             <hr />
-            {profilePic && <img src={profilePic} width={300}/>}
+            {url && <video src={url} width={300}/>}
 
-            <Form.Group className="mb-3" controlId="">
+
+
+            {/* <Form.Group className="mb-3" controlId="">
               <Form.Label>Name</Form.Label>
               <Form.Control
                 type="text"
@@ -72,7 +72,7 @@ export function AddForm({setCrewList}) {
                 // value={form.name}
                 onChange={updateForm}
               />
-            </Form.Group>
+            </Form.Group> */}
          
             {/* <Form.Group className="mb-3" controlId="">
               <Form.Label>Instagram</Form.Label>
