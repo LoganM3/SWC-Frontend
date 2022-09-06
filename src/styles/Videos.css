@@ -4,3 +4,9 @@
     height: 400px;
     width: 400px;
 }
+
+.vid-container{
+    justify-content: center;
+    align-items: center;
+    background-color: #cccc;
+}

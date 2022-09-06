@@ -5,8 +5,10 @@ export default function VidPage(){
 
 
     return(
-        <div >
-        <Upload/>
+        <div className="body">
+            <div className="vid-container">
+                <Upload/>
+            </div>
         </div>
     )
     }

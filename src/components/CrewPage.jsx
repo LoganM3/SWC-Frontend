@@ -28,10 +28,15 @@ export default function CrewPage({crewList, setCrewList}){
             {crewList.map(crew => (
                 <div key={crew.id} className="crewCards">
                          {crew.profilePic && <img className="profilePic"  src={crew.profilePic} width={300} />}
-                         <br/>
+                        <div className="text-area">
+                         <div className="Name">
                          {crew.name}
-                         <br/>
+                         </div>
+                         {/* {crew.Instagram} */}
+                         <div className="description">
                          {crew.description}
+                         </div>
+                        </div>
                 </div>
             ))}
         </ul>

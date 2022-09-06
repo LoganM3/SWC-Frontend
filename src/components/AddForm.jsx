@@ -2,7 +2,7 @@ import React, { useState,useEffect} from "react";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import Form from "react-bootstrap/Form";
-// import '../styles/CrewPage.css'
+ import '../styles/CrewPage.css'
 
 
 
@@ -10,7 +10,7 @@ export function AddForm({setCrewList}) {
   const [show, setShow] = useState(false);
   const [form, setForm] = useState({});
   const [profilePic, setProfilePic] = useState();
-  const [loading, setLoading] = useState()
+  // const [loading, setLoading] = useState(false)
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -25,7 +25,7 @@ export function AddForm({setCrewList}) {
     })
     .catch((err) => console.error(err))
     setCrewList(await addCrew.json())  
-    // setLoading(false)  **** ask about loading and where to put it
+      // setLoading(true)  //**** ask about loading and where to put it
     handleClose()
   }
 
@@ -63,7 +63,7 @@ export function AddForm({setCrewList}) {
             <hr />
             {profilePic && <img src={profilePic} width={300}/>}
 
-            <Form.Group className="mb-3" controlId="">
+            <Form.Group className="Name" controlId="">
               <Form.Label>Name</Form.Label>
               <Form.Control
                 type="text"
@@ -74,17 +74,18 @@ export function AddForm({setCrewList}) {
               />
             </Form.Group>
          
-            {/* <Form.Group className="mb-3" controlId="">
+         
+             {/* <Form.Group className="mb-3" controlId="">  
               <Form.Label>Instagram</Form.Label>
               <Form.Control
-                type="link"
+                type="href"                           //This doesnt work!!!!!!
                 name="Instagram"
                 placeholder="Instagram link"
                 onChange={updateForm}
               />
-            </Form.Group> */}
+            </Form.Group>  */}
 
-            <Form.Group className="mb-3" controlId="formBasicPassword">
+            <Form.Group className="description" controlId="">
               <Form.Label>Description</Form.Label>
               <Form.Control 
               as="textarea" 
