@@ -75,15 +75,15 @@ export function AddForm({setCrewList}) {
             </Form.Group>
          
          
-             {/* <Form.Group className="mb-3" controlId="">  
+             <Form.Group className="mb-3" controlId="">  
               <Form.Label>Instagram</Form.Label>
               <Form.Control
-                type="href"                           //This doesnt work!!!!!!
+                type="url"                           //This doesnt work!!!!!!
                 name="Instagram"
                 placeholder="Instagram link"
                 onChange={updateForm}
               />
-            </Form.Group>  */}
+            </Form.Group> 
 
             <Form.Group className="description" controlId="">
               <Form.Label>Description</Form.Label>

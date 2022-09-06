@@ -1,5 +1,7 @@
 import { useEffect,useState} from "react"
 import { AddForm } from "./AddForm"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import {faInstagram} from "@fortawesome/free-brands-svg-icons"
 import "../styles/CrewPage.css"
 
 
@@ -32,7 +34,9 @@ export default function CrewPage({crewList, setCrewList}){
                          <div className="Name">
                          {crew.name}
                          </div>
-                         {/* {crew.Instagram} */}
+                          <a href={crew.Instagram} >
+                          <FontAwesomeIcon icon={faInstagram} size="2x"/>
+                          </a>
                          <div className="description">
                          {crew.description}
                          </div>
