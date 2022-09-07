@@ -78,7 +78,7 @@ export function AddForm({setCrewList}) {
              <Form.Group className="mb-3" controlId="">  
               <Form.Label>Instagram</Form.Label>
               <Form.Control
-                type="url"                           //This doesnt work!!!!!!
+                type="url"                         
                 name="Instagram"
                 placeholder="Instagram link"
                 onChange={updateForm}

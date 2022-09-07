@@ -6,6 +6,7 @@ import Footer from "./components/Footer";
 import Home from './components/Home';
 import NavBar from "./components/NavBar";
 import VidPage from "./components/vidPage";
+import Admin from "./components/Admin";
 
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
     <NavBar/>
     <Routes>
       <Route index element = {<Home/>} />
+       <Route path="admin" element = {<Admin/>}/> 
       <Route path="crew" element = {<CrewPage crewList={crewList} setCrewList={setCrewList}/>} />
       <Route path="videos" element={<VidPage/>} />
     </Routes>
