@@ -57,7 +57,7 @@ export function AddForm({setCrewList,token}) {
 
   return (
     <>
-      <Button variant="primary" onClick={handleShow}>
+      <Button variant="primary" onClick={handleShow} hidden={token? false: true}>
         Add Member
       </Button>
 
