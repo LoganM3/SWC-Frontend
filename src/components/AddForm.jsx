@@ -6,11 +6,11 @@ import Form from "react-bootstrap/Form";
 
 
 
-export function AddForm({setCrewList}) {
+export function AddForm({setCrewList,token}) {
   const [show, setShow] = useState(false);
   const [form, setForm] = useState({});
   const [profilePic, setProfilePic] = useState();
-  // const [loading, setLoading] = useState(false)
+ 
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -18,14 +18,22 @@ export function AddForm({setCrewList}) {
   async function formSubmit(e) {
     e.preventDefault();
     form.profilePic=profilePic
-    const addCrew = await fetch("https://swc-api-aa731.web.app/crew", {
+    console.log(token)
+    const addCrew = await 
+    //fetch("http://localhost:5050/crew"
+     fetch("https://swc-api-aa731.web.app/crew"
+    , {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
+       mode: "cors",
+      headers: { 
+        "Content-Type": "application/json",
+        "Authorization": token
+      },
       body: JSON.stringify(form),
     })
     .catch((err) => console.error(err))
     setCrewList(await addCrew.json())  
-      // setLoading(true)  //**** ask about loading and where to put it
+ 
     handleClose()
   }
 

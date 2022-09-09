@@ -7,6 +7,7 @@ import React from "react";
 
 function Hero(){
 return (
+  <div className="hero-container">
     <div className='container'>
       <Carousel className='hero' /*variant="dark"*/ >
       <Carousel.Item>
@@ -31,6 +32,7 @@ return (
           />
         </Carousel.Item>
       </Carousel>
+    </div>
     </div>
 )
 }

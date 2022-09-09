@@ -9,10 +9,12 @@ function NavBar(){
 
     return(
          <nav className="navbar">
-           <a className="navbar-brand" href="/Admin">
-            <img src="Logo1.png" width="30" height="30" className="d-inline-block align-top" alt="page title" />
-                Sunday Wake Crew
+          <div className="logo-container">
+           <a className="navbar-brand" href="/admin">
+            <img src="Logo1.png" width="50" height="50" className="d-inline-block align-top" alt="page title" />
+                <p className="logo-text">Sunday Wake Crew</p>
           </a>
+          </div>
           <Nav activeKey="/home">
       <Nav.Item>
        <Nav.Link as={Link} to='/'>

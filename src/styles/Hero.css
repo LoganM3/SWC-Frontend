@@ -1,12 +1,29 @@
+
+.hero-container{
+    background-color: rgba(81, 81, 81, 0.644);
+}
+
+
 .container{
-    background-color: #cccc;
-    width: 50%
+    /* background-color: #cccc; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+padding: 2%;
+    width: 30%;
+    border-radius: 10px;
+    /* border-style: solid; */
+    /* height: 30%;
+    width: 30%; */
+   
 }
 
 
 .img{
-    height: 400px;
-   width: 700px;
+    object-fit: contain;
+    border-radius: 10px;
+    height: 600px;
+   width: 600px;
    
    
 

@@ -6,11 +6,12 @@ import "../styles/CrewPage.css"
 
 
 
-export default function CrewPage({crewList, setCrewList}){
+export default function CrewPage({crewList, setCrewList,token,isAdmin, setIsAdmin, setToken}){
     
     // call the api and use setTasklifirst to fill in state....
     useEffect(() => {
-        fetch('https://swc-api-aa731.web.app/crew')
+         fetch('https://swc-api-aa731.web.app/crew')
+        //fetch("http://localhost:5050/crew")
         .then(results => results.json())
         .then(crew => setCrewList(crew))
         .catch(err => console.error(err))
@@ -45,8 +46,14 @@ export default function CrewPage({crewList, setCrewList}){
             ))}
         </ul>
        
-        <AddForm setCrewList={setCrewList}/>
-      
+        <AddForm setCrewList={setCrewList} token={token}/>
+        {/* {!token ?
+        isAdmin
+        ?<Login setIsAdmin={setIsAdmin} setToken={setToken} />
+       
+        :null
+        }   
+       */}
       
         </div>
     )
