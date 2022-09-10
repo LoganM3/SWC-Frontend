@@ -12,8 +12,6 @@ import { useNavigate } from 'react-router-dom';  /// want to redirct to home pag
 
     const handleLogin = (e) =>{
 
-     
-       
         e.preventDefault();
     
          fetch("https://swc-api-aa731.web.app/admin"
@@ -36,6 +34,11 @@ import { useNavigate } from 'react-router-dom';  /// want to redirct to home pag
         })
         .catch(err => alert(err.message))
         
+    }
+
+    const handleLogOut = (e) => {
+      localStorage.clear();
+      window.location.href = '/';
     }
   
   
@@ -60,9 +63,8 @@ import { useNavigate } from 'react-router-dom';  /// want to redirct to home pag
            onChange={(e) => setPassword(e.target.value)}/>
         </Form.Group>
     
-        <Button variant="primary" type="submit" >
-          Submit
-        </Button>
+        <Button variant="primary" type="submit" >Login </Button>
+        <Button onClick={handleLogOut}>Logout</Button>
       </Form>
     )
 }
