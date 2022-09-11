@@ -4,7 +4,7 @@ import Form from 'react-bootstrap/Form';
 import { useNavigate } from 'react-router-dom';  /// want to redirct to home page
                                                 /// want to make add buttons vanish if not logged in
 
- export default function Admin({setToken, setIsAdmin}){
+ export default function Admin({setToken, setIsAdmin,}){
      const [username, setUsername] = useState()
      const [password, setPassword] = useState()
      let navigate = useNavigate();
@@ -30,7 +30,7 @@ import { useNavigate } from 'react-router-dom';  /// want to redirct to home pag
             localStorage.setItem('token', data.token)
             console.log(data.token)
             navigate("/")
-            // setIsAdmin(true)   // if username == username && password == password????
+           setIsAdmin(true)   // if username == username && password == password????
         })
         .catch(err => alert(err.message))
         

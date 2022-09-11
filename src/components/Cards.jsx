@@ -35,7 +35,7 @@ return(
       <div className='card-image-container '>
         <div className='img-inner'>
           <div className='inner-skew'>
-            <img className="card-image" src ="card2.png" alt=""/> 
+            <img className="card-image" src ="card3.png" alt=""/> 
           </div>
         </div>
       </div>

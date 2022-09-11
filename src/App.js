@@ -36,7 +36,7 @@ function App() {
       <Route index element = {<Home/>} />
        <Route path="admin" element = {<Admin setToken={setToken} setIsAdmin={setIsAdmin}/>}/> 
       <Route path="crew" element = {<CrewPage crewList={crewList} setCrewList={setCrewList} token={token}/>} />
-      <Route path="videos" element={<VidPage/>} />
+      <Route path="videos" element={<VidPage token={token} /> } />
     </Routes>
     <div className="footer"><Footer/></div>
   </BrowserRouter>

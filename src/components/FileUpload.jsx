@@ -4,15 +4,16 @@ import { storage } from "../firebase";
 import { v4 } from "uuid";
 import React from "react";
 
-//const storageref= ref(storage)
 
-export function Upload() {
+
+export function Upload({token}) {
   const [videoUpload, setVideoUpload] = useState(null);
   const [videoUrls, setVideoUrls] = useState([]);
 
   const videoListRef = ref(storage, "videos/");
   const uploadFile = () => {
     if (videoUpload == null) return;
+    
 
     const videoRef = ref(storage, `videos/${videoUpload.name + v4()}`);
     uploadBytes(videoRef, videoUpload).then((snapshot) => {
@@ -23,7 +24,7 @@ export function Upload() {
   };
 
   useEffect(() => {
-    listAll(videoListRef).then((response) => {    /////Look here for fix
+    listAll(videoListRef).then((response) => {    
       response.items.forEach((item) => {
         getDownloadURL(item).then((url) => {
            setVideoUrls((prev) => [...prev, url]);
@@ -34,20 +35,13 @@ export function Upload() {
 function formSubmit(e){
   e.preventDefault();
 }
+
+
   // console.log({videoUrls})
   return (
+    
     <div className="upload">
-      <form onSubmit={formSubmit}>
-        <input
-          type="file"
-          onChange={(e) => {
-            console.log("file selected");
-            setVideoUpload(e.target.files[0]);
-          }}
-        />
-        <button onClick={uploadFile}> Upload Video</button>
-      </form>
-
+     
       {videoUrls.map((url) => {
         return (
           <>
@@ -57,6 +51,20 @@ function formSubmit(e){
           </>
         );
       })}
+
+<form onSubmit={formSubmit}>
+        <input
+          type="file"
+          onChange={(e) => {
+            console.log("file selected");
+            setVideoUpload(e.target.files[0]);
+          }}
+          hidden={token? false: true}
+        />
+        <button onClick={uploadFile} hidden={token? false: true} > Upload Video</button>
+      </form>
+
     </div>
+   
   );
 }

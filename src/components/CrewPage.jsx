@@ -19,15 +19,16 @@ export default function CrewPage({crewList, setCrewList,token,isAdmin, setIsAdmi
     }, [setCrewList])
 
     if(!crewList){
-        return <h2>add crew members here</h2>
+        return <h2>Loading...</h2>
       }
 
       
     return(
-       <div >
-        <div><img className="groupImg" src="group.png" /></div> 
+       <div className="crewBody">
+        <div><img className="groupImg" src="swccc.jpeg" /></div> 
         <h2></h2>
         <ul className="crewContainer">
+            {/* <div className="box"> */}
             {crewList.map(crew => (
                 <div key={crew.id} className="crewCards">
                          {crew.profilePic && <img className="profilePic"  src={crew.profilePic} width={300} />}
@@ -44,16 +45,11 @@ export default function CrewPage({crewList, setCrewList,token,isAdmin, setIsAdmi
                         </div>
                 </div>
             ))}
+            {/* </div> */}
         </ul>
        
         <AddForm setCrewList={setCrewList} token={token}/>
-        {/* {!token ?
-        isAdmin
-        ?<Login setIsAdmin={setIsAdmin} setToken={setToken} />
        
-        :null
-        }   
-       */}
       
         </div>
     )
