@@ -45,15 +45,8 @@ return(
                   <button className='card-btn' onClick={navigateToVideos}>Watch Now</button>
                 </div>
               </div>
-               {/* <div className='card-two'>
-                    <img className="card-image" src ="card2.png" alt="video card"/>
-                      <div className='card-body'>
-                          <h5 className='card-title'>Videos</h5>
-                              <button className='card-btn' onClick={navigateToVideos} >Watch Now</button>
-                         </div>
-                     </div>  */}
-                  </div>
-                  </div>
+            </div>
+         </div>
  )
     
 }
